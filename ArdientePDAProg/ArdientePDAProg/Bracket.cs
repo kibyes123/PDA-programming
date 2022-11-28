@@ -24,25 +24,49 @@ namespace ArdientePDAProg
                     {
                         _stack.Push(c);
                     }
-                    else if (c == ')' && (char)_stack.Peek()! == '(')
+                    else if (c == ')')
                     {
-                        _stack.Pop();
+                        if ((char)_stack.Peek()! == '(')
+                        {
+                            _stack.Pop();
+                        }
+                        else
+                        {
+                            return false;
+                        }
+
                     }
                     else if (c == '[')
                     {
                         _stack.Push(c);
                     }
-                    else if (c == ']' && (char)_stack.Peek()! == '[')
+                    else if (c == ']')
                     {
-                        _stack.Pop();
+                        if ((char)_stack.Peek()! == '[')
+                        {
+                            _stack.Pop();
+                        }
+                        else
+                        {
+                            return false;
+                        }
+
                     }
                     else if (c == '{')
                     {
                         _stack.Push(c);
                     }
-                    else if (c == '}' && (char)_stack.Peek()! == '{')
+                    else if (c == '}')
                     {
-                        _stack.Pop();
+                        if((char)_stack.Peek()! == '{')
+                        {
+                            _stack.Pop();
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                        
                     }
                 }
                 catch
